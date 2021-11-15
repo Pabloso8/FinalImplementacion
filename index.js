@@ -19,7 +19,8 @@ app.use("/circulo", require("./capaControllers/Circulo"));
 app.use("/triangulo", require("./capaControllers/Triangulo"));
 app.use("/rectangulo", require("./capaControllers/Rectangulo"));
 
-app.get('/', (req, res) => res.send("wenas"))
+app.use(express.static('build'));
+app.get('/', (req, res) => express.static('build'))
 app.get('/wenas', (req, res) => res.send("wenas"))
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
